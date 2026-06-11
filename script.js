@@ -27,9 +27,4 @@ topBtn.addEventListener("click", () => {
   });
 });
 
-.dashboard-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 25px;
-  color: var(--primary);
-}
+

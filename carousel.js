@@ -1,6 +1,6 @@
 class Carousel {
   constructor(wrapper) {
-    this.carousel = wrapper.querySelector(".skills-wrapper .expertise-grid");
+    this.carousel = wrapper.querySelector(".skills-carousel");
     this.leftBtn = wrapper.querySelector(".left");
     this.rightBtn = wrapper.querySelector(".right");
 

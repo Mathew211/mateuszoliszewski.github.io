@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV Portfolio - QA Tester</title>
-
+  <title>Mateusz Oliszewski | Software Tester</title>
+  <link rel="icon" type="image/png" href="assets/icons/page_icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,7 +17,6 @@
   <header>
     <div class="container nav">
       <div class="logo">&lt;/<span>CV</span>&gt;</div>
-
       <button class="menu-btn" id="menuBtn">☰</button>
 
       <ul id="menu">
@@ -25,7 +24,7 @@
         <li><a href="#about">About me</a></li>
         <li><a href="#expertise">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <!-- <li><a href="#projects">Projects</a></li> -->
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -46,8 +45,9 @@
         </p>
 
         <div class="buttons">
-          <a href="#" class="btn btn-primary">⬇ Download CV</a>
-          <a href="#contact" class="btn btn-outline">✈ Contact</a>
+          <a href="/file/Mateusz_Oliszewski_CV.pdf" class="btn btn-primary" target="_blank">⬇
+            Download CV</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
       </div>
 
@@ -98,9 +98,10 @@
 
     <div class="skills-wrapper">
 
-      <button class="left">❮</button>
+      <button class="carousel-btn left">❮</button>
 
-      <div class="container expertise-grid">
+      <div class="skills-carousel">
+
         <div class="expertise-card testing">
           <div class="expertise-icon"><img src="assets/icons/test_activities.png" alt="Test Activities"></div>
           <h3>Test Activities</h3>
@@ -113,7 +114,6 @@
             <li>Defect Reporting</li>
             <li>Writing Test Documentation</li>
             <li>Test Reporting</li>
-
           </ul>
         </div>
 
@@ -143,7 +143,6 @@
             <li>Test Data Management</li>
           </ul>
         </div>
-
         <div class="expertise-card core">
           <div class="expertise-icon"><img src="assets/icons/core.png" alt="Core Competencies"></div>
           <h3>Core Competencies</h3>
@@ -157,13 +156,9 @@
             <li>Continuous Learning</li>
           </ul>
         </div>
-
       </div>
-
-      <button class="right">❯</button>
-
+      <button class="carousel-btn right">❯</button>
     </div>
-
   </section>
 
   <section id='languages'>
@@ -283,9 +278,9 @@
   <section id="contact">
     <div class="container">
       <div class="section-title">
-        <div class="icon-circle">✈</div>
+        <div class="icon-circle">✉️</div>
         <div>
-          <h3>Contacts</h3>
+          <h3>Contact</h3>
           <div class="yellow-line"></div>
         </div>
       </div>
@@ -293,7 +288,7 @@
       <div class="contact-grid">
         <div class="card contact-card">
           <div class="project-icon"><img src="assets/icons/email-svgrepo-com.svg" alt="Email"></div>
-          <h4>Email</h4>-
+          <h4>Email</h4>
           <a href="mailto:mateuszoliszewski@gmail.com" target="_blank">mateuszoliszewski@gmail.com</a>
         </div>
 
@@ -306,7 +301,7 @@
         <div class="card contact-card">
           <div class="project-icon"><img src="assets/icons/github-color-svgrepo-com.svg" alt="GitHub"></div>
           <h4>GitHub</h4>
-          <a href="https://github.com/Mathew211" target="_blank">github.com/Mathew211</a>
+          <p>In progress</p>
         </div>
       </div>
     </div>

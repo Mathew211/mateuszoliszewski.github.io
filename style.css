@@ -5,7 +5,7 @@
 :root {
   --primary: #061b3a;
   --primary-light: #123c78;
-  --secondary: #07ff41;
+  --secondary: orange;
 
   --background: #f5f7fa;
   --background-light: #f8fafd;
@@ -484,7 +484,13 @@ section:nth-of-type(even) {
    SKILLS / CAROUSELS
 ========================= */
 
-.expertise-grid {
+.skills-wrapper {
+  position: relative;
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.skills-carousel {
   display: flex;
   gap: 26px;
 
@@ -496,46 +502,28 @@ section:nth-of-type(even) {
 
   padding: 10px 5px 24px;
 
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 
-.expertise-grid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.expertise-grid::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 999px;
-}
-
-.expertise-grid::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.expertise-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(255, 193, 7, 0.55);
+.skills-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .expertise-card {
-  flex: 0 0 320px;
+  flex: 0 0 340px;
+
   scroll-snap-align: center;
 
   background: #ffffff;
   border: 1px solid #edf1f7;
-  border-radius: 20px;
+  border-radius: 24px;
+
   padding: 34px 28px;
   min-height: 360px;
-  box-shadow: 0 16px 35px rgba(15, 31, 61, 0.08);
-  transition: 0.3s ease;
-}
 
-.expertise-card img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  border-radius: 16px;
+  box-shadow: 0 16px 35px rgba(15, 31, 61, 0.08);
+
+  transition: all .3s ease;
 }
 
 .expertise-card:hover {
@@ -546,11 +534,21 @@ section:nth-of-type(even) {
 .expertise-icon {
   width: 92px;
   height: 92px;
+
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   margin-bottom: 24px;
+}
+
+.expertise-icon img {
+  width: 90px;
+  height: 90px;
+
+  object-fit: contain;
 }
 
 .testing .expertise-icon {
@@ -572,7 +570,7 @@ section:nth-of-type(even) {
 .expertise-card h3 {
   font-size: 22px;
   margin-bottom: 18px;
-  color: #061b3a;
+  color: var(--primary);
 }
 
 .expertise-card ul {
@@ -582,22 +580,28 @@ section:nth-of-type(even) {
 }
 
 .expertise-card li {
-  font-size: 15px;
-  color: #33415c;
   display: flex;
   align-items: center;
   gap: 10px;
+
+  color: #33415c;
+  font-size: 15px;
 }
 
 .expertise-card li::before {
   content: "✓";
-  width: 16px;
-  height: 16px;
+
+  width: 18px;
+  height: 18px;
+
   border-radius: 50%;
-  display: grid;
-  place-items: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .testing li::before {
@@ -622,59 +626,48 @@ section:nth-of-type(even) {
 
 .carousel-btn {
   position: absolute;
+
   top: 50%;
   transform: translateY(-50%);
 
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
 
   border: none;
   border-radius: 50%;
 
-  background: white;
-  color: #061b3a;
+  background: rgba(255, 255, 255, .95);
+
+  color: var(--primary);
 
   cursor: pointer;
 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+  box-shadow: 0 10px 25px rgba(15, 31, 61, .12);
 
-  z-index: 10;
-}
+  z-index: 20;
 
-.carousel-btn.left {
-  left: -25px;
-}
-
-.carousel-btn.right {
-  right: -25px;
+  transition: all .3s ease;
 }
 
 .carousel-btn:hover {
-  background: #061b3a;
+  background: var(--primary);
   color: white;
+
+  transform:
+    translateY(-50%) scale(1.08);
 }
 
-.skills-wrapper {
-  position: relative;
+.carousel-btn.left {
+  left: -35px;
 }
 
-.skills-carousel {
-  display: flex;
-  gap: 24px;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+.carousel-btn.right {
+  right: -35px;
 }
 
-.skills-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.expertise-card {
-  flex: 0 0 320px;
+.carousel-btn.disabled {
+  opacity: .3;
+  pointer-events: none;
 }
 
 /* =========================
@@ -882,8 +875,6 @@ footer {
 
 }
 
-
-
 @media (max-width: 620px) {
   section {
     padding: 44px 0;
@@ -909,6 +900,7 @@ footer {
   .contact-box {
     grid-template-columns: 1fr;
   }
+
 }
 
 @media (max-width: 520px) {
@@ -928,5 +920,32 @@ footer {
   .section-title h3,
   .skills h3 {
     font-size: 21px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .left,
+  .right,
+  .carousel-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .left,
+  .right,
+  .carousel-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .left,
+  .right,
+  .carousel-btn {
+    display: none !important;
   }
 }

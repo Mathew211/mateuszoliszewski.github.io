@@ -1,6 +1,6 @@
 class Carousel {
   constructor(wrapper) {
-    this.carousel = wrapper.querySelector(".skills-carousel");
+    this.carousel = wrapper.querySelector(".skills-wrapper .expertise-grid");
     this.leftBtn = wrapper.querySelector(".left");
     this.rightBtn = wrapper.querySelector(".right");
 
@@ -10,14 +10,14 @@ class Carousel {
   init() {
     this.leftBtn?.addEventListener("click", () => {
       this.carousel.scrollBy({
-        left: -400,
+        left: -(this.carousel.clientWidth * 0.8),
         behavior: "smooth",
       });
     });
 
     this.rightBtn?.addEventListener("click", () => {
       this.carousel.scrollBy({
-        left: 400,
+        left: this.carousel.clientWidth * 0.8,
         behavior: "smooth",
       });
     });

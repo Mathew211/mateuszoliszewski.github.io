@@ -46,16 +46,17 @@
         </p>
 
         <div class="buttons">
-          <a href="#" class="btn btn-primary">⬇ Pobierz CV</a>
-          <a href="#contact" class="btn btn-outline">✈ Kontakt</a>
+          <a href="#" class="btn btn-primary">⬇ Download CV</a>
+          <a href="#contact" class="btn btn-outline">✈ Contact</a>
         </div>
       </div>
 
       <div class="contact-box">
-        <div>✉ mateuszoliszewski@gmail.com</div>
-        <div>☎ +48 730 832 348</div>
-        <div>📍 Trzebnica, Polska</div>
-        <div>💼 Availability : 3 months</div>
+        <div class="mailto"><img src="assets/icons/mail.svg" alt="Email" />
+          <a href="mailto:mateuszoliszewski@gmail.com" target="_blank">mateuszoliszewski@gmail.com</a>
+        </div>
+        <div class="phone"><img src="assets/icons/phone.svg" alt="Phone"> (+48) 730 832 348</div>
+        <div class="location"><img src="assets/icons/location.svg" alt="Location">Trzebnica, Poland</div>
       </div>
     </div>
   </main>
@@ -94,65 +95,101 @@
         <div class="yellow-line"></div>
       </div>
     </div>
-    <div class="container expertise-grid">
-      <div class="expertise-card testing">
-        <div class="expertise-icon"><img src="assets/icons/test_activities.png" alt="Test Activities"></div>
-        <h3>Test Activities</h3>
-        <ul>
-          <li>Requirements Analysis</li>
-          <li>Test Planning</li>
-          <li>Test Case Design</li>
-          <li>Test Data Preparation</li>
-          <li>Test Execution</li>
-          <li>Defect Reporting</li>
-          <li>Writing Test Documentation</li>
-          <li>Test Reporting</li>
 
-        </ul>
+    <div class="skills-wrapper">
+
+      <button class="left">❮</button>
+
+      <div class="container expertise-grid">
+        <div class="expertise-card testing">
+          <div class="expertise-icon"><img src="assets/icons/test_activities.png" alt="Test Activities"></div>
+          <h3>Test Activities</h3>
+          <ul>
+            <li>Requirements Analysis</li>
+            <li>Test Planning</li>
+            <li>Test Case Design</li>
+            <li>Test Data Preparation</li>
+            <li>Test Execution</li>
+            <li>Defect Reporting</li>
+            <li>Writing Test Documentation</li>
+            <li>Test Reporting</li>
+
+          </ul>
+        </div>
+
+        <div class="expertise-card tools">
+          <div class="expertise-icon"><img src="assets/icons/tools.png" alt="Tools & Platforms"></div>
+          <h3>Tools & Platforms</h3>
+          <ul>
+            <li>Jira,Confluence,Azure DevOps </li>
+            <li>Postman,Swagger,Bruno</li>
+            <li>JS,JSON,HTML,CSS</li>
+            <li>SQL, MySQL</li>
+            <li>Graylog,Kibana</li>
+            <li>GitHub,Gitlab</li>
+            <li>AI Tools</li>
+          </ul>
+        </div>
+
+        <div class="expertise-card automation">
+          <div class="expertise-icon"><img src="assets/icons/automation.png" alt="Test Automation"></div>
+          <h3>Test Automation</h3>
+          <ul>
+            <li>Playwright</li>
+            <li>Cypress</li>
+            <li>JavaScript</li>
+            <li>API Automation</li>
+            <li>Page Object Model</li>
+            <li>Test Data Management</li>
+          </ul>
+        </div>
+
+        <div class="expertise-card core">
+          <div class="expertise-icon"><img src="assets/icons/core.png" alt="Core Competencies"></div>
+          <h3>Core Competencies</h3>
+          <ul>
+            <li>Analytical Thinking</li>
+            <li>Problem Solving</li>
+            <li>Attention to Detail</li>
+            <li>Communication</li>
+            <li>Team Collaboration</li>
+            <li>Time Management</li>
+            <li>Continuous Learning</li>
+          </ul>
+        </div>
+
       </div>
 
-      <div class="expertise-card tools">
-        <div class="expertise-icon"><img src="assets/icons/tools.png" alt="Tools & Platforms"></div>
-        <h3>Tools & Platforms</h3>
-        <ul>
-          <li>Jira,Confluence,Azure DevOps </li>
-          <li>Postman,Swagger,Bruno</li>
-          <li>JS,JSON,HTML,CSS</li>
-          <li>SQL, MySQL</li>
-          <li>Graylog,Kibana</li>
-          <li>GitHub,Gitlab</li>
-          <li>AI Tools</li>
-        </ul>
-      </div>
-
-      <div class="expertise-card automation">
-        <div class="expertise-icon"><img src="assets/icons/automation.png" alt="Test Automation"></div>
-        <h3>Test Automation</h3>
-        <ul>
-          <li>Playwright</li>
-          <li>Cypress</li>
-          <li>JavaScript</li>
-          <li>API Automation</li>
-          <li>Page Object Model</li>
-          <li>Test Data Management</li>
-        </ul>
-      </div>
-
-      <div class="expertise-card core">
-        <div class="expertise-icon"><img src="assets/icons/core.png" alt="Core Competencies"></div>
-        <h3>Core Competencies</h3>
-        <ul>
-          <li>Analytical Thinking</li>
-          <li>Problem Solving</li>
-          <li>Attention to Detail</li>
-          <li>Communication</li>
-          <li>Team Collaboration</li>
-          <li>Time Management</li>
-          <li>Continuous Learning</li>
-        </ul>
-      </div>
+      <button class="right">❯</button>
 
     </div>
+
+  </section>
+
+  <section id='languages'>
+    <div class="container">
+      <div class="section-title">
+        <div class="icon-circle">🌐</div>
+        <div>
+          <h3>Languages</h3>
+          <div class="yellow-line"></div>
+        </div>
+      </div>
+
+      <div class="languages-grid">
+        <div class="language-card">
+          <img src="/assets/icons/polish.svg" alt="Polish">
+          <p>Native</p>
+        </div>
+
+        <div class="language-card">
+          <img src="/assets/icons/english.png" alt="English">
+          <p>Intermediate (B2)</p>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <section id="experience">
@@ -170,7 +207,7 @@
           <div class="date">Sept 2021 -> Present</div>
 
           <div class="card job-card">
-            <h4>QA Tester</h4>
+            <h4>Software Tester</h4>
             <div class="company">MediaExpert / TERG S.A.</div>
             <ul>
               <li>Creating, maintaining, and executing test cases and test scenarios</li>
@@ -192,25 +229,23 @@
           </div>
         </div>
 
-        <!-- <div class="job">
-          <div class="date">2020 — 2022</div> -->
-
-        <!-- <div class="card job-card">
+        <div class="job">
+          <div class="date">2020 — 2022</div>
+          <div class="card job-card">
             <h4>Junior QA Tester</h4>
             <div class="company">Nazwa firmy</div>
             <ul>
-              <li>Wykonywanie testów manualnych</li>
-              <li>Przygotowywanie scenariuszy testowych</li>
-              <li>Testy UI/UX</li>
-              <li>Współpraca z zespołem developerskim</li>
+              <li>Created test scenarios and test cases</li>
+              <li>Performed manual testing of web applications</li>
+              <li>Identified and reported software defects</li>
             </ul>
-          </div> -->
-        <!-- </div> -->
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="projects">
+  <!-- <section id="projects">
     <div class="container">
       <div class="section-title">
         <div class="icon-circle">📁</div>
@@ -243,7 +278,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="contact">
     <div class="container">

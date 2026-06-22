@@ -57,10 +57,7 @@ a {
   color: inherit;
 }
 
-/* img {
-  max-width: 200%;
-  display: block;
-} */
+/* removed unused commented img rule */
 
 .container {
   width: min(1120px, 92%);
@@ -414,6 +411,40 @@ section:nth-of-type(even) {
   border-radius: 20px;
 }
 
+.mailto {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+}
+
+.mailto img {
+  width: 14px;
+  height: 14px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone img {
+  width: 14px;
+  height: 14px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location img {
+  width: 14px;
+  height: 14px;
+}
+
 /* =========================
    CARDS
 ========================= */
@@ -454,9 +485,31 @@ section:nth-of-type(even) {
 ========================= */
 
 .expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 26px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding: 10px 5px 24px;
+
+  scrollbar-width: thin;
+}
+
+.expertise-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.expertise-grid::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.expertise-grid::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .expertise-card:hover {
@@ -466,6 +519,9 @@ section:nth-of-type(even) {
 }
 
 .expertise-card {
+  flex: 0 0 320px;
+  scroll-snap-align: center;
+
   background: #ffffff;
   border: 1px solid #edf1f7;
   border-radius: 20px;
@@ -476,9 +532,9 @@ section:nth-of-type(even) {
 }
 
 .expertise-card img {
-  width: 130%;
-  height: 130%;
-  object-fit: cover;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
   border-radius: 16px;
 }
 
@@ -564,16 +620,101 @@ section:nth-of-type(even) {
   border: 2px solid #ec4899;
 }
 
-@media (max-width: 1000px) {
-  .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+  color: #061b3a;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+
+  z-index: 10;
 }
 
-@media (max-width: 620px) {
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
+.carousel-btn.left {
+  left: -25px;
+}
+
+.carousel-btn.right {
+  right: -25px;
+}
+
+.carousel-btn:hover {
+  background: #061b3a;
+  color: white;
+}
+
+.skills-wrapper {
+  position: relative;
+}
+
+.skills-carousel {
+  display: flex;
+  gap: 24px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.skills-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.expertise-card {
+  flex: 0 0 320px;
+}
+
+/* =========================
+  Languages
+========================= */
+.language-card {
+  background: #ffffff;
+  border: 1px solid #edf1f7;
+  border-radius: 20px;
+  text-align: center;
+  padding: 34px 28px;
+  min-height: 200px;
+  box-shadow: 0 16px 35px rgba(15, 31, 61, 0.08);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.language-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(15, 31, 61, 0.14);
+  border-color: rgba(255, 193, 7, 0.55);
+}
+
+.language-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.language-card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.language-card p {
+  font-size: 15px;
+  color: #000000;
+  text-align: center;
+
 }
 
 /* =========================
@@ -734,38 +875,27 @@ footer {
     height: 210px;
   }
 
-  .contact-box {
-    border-left: 0;
-    padding-left: 0;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .job-card ul {
     grid-template-columns: 1fr;
   }
 
-  .qa-dashboard {
-    max-width: 100%;
-  }
 }
 
-@media (max-width: 768px) {
-  .arrow {
-    display: none;
-  }
 
-  .skills-carousel {
-    padding: 18px 20px;
-    overflow-x: auto;
-  }
-}
 
 @media (max-width: 620px) {
   section {
     padding: 44px 0;
+  }
+
+  .expertise-card {
+    flex-basis: 290px;
+  }
+
+  .expertise-grid {
+    gap: 18px;
+    padding-bottom: 20px;
   }
 
   .hero h1 {
@@ -778,24 +908,6 @@ footer {
 
   .contact-box {
     grid-template-columns: 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-carousel {
-    gap: 18px;
-  }
-
-  .skill-card {
-    flex-basis: 200px;
-    height: 160px;
-  }
-
-  .skill-card img {
-    width: 56px;
-    height: 56px;
   }
 }
 
